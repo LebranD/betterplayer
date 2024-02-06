@@ -1,6 +1,6 @@
 buildscript {
-    ext.kotlinVersion = "1.5.31"
-    ext.gradleVersion = "7.0.2"
+    ext.kotlin_version = '1.7.10'
+    ext.gradleVersion = "7.3.0"
     ext.multidexVersion = "2.0.1"
     repositories {
         google()
@@ -8,8 +8,8 @@ buildscript {
     }
 
     dependencies {
-        classpath "com.android.tools.build:gradle:$gradleVersion"
-        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlinVersion"
+        classpath 'com.android.tools.build:gradle:7.3.0'
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
     }
 }
 
@@ -28,6 +28,6 @@ subprojects {
     project.evaluationDependsOn(':app')
 }
 
-task clean(type: Delete) {
+tasks.register("clean", Delete) {
     delete rootProject.buildDir
 }
